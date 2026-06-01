@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>우준서 | 화학을 꿈꾸는 학생</title>
+  <meta name="description" content="안녕하세요! 화학 분야를 꿈꾸는 학생 우준서의 개인 소개 웹사이트입니다. INFP 성격의 유튜브, 롤, 수면을 즐기는 청년입니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 파티클 캔버스 -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- 네비게이션 -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>WJS<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" id="nav-home">홈</a></li>
+      <li><a href="#about" id="nav-about">소개</a></li>
+      <li><a href="#hobbies" id="nav-hobbies">취미</a></li>
+      <li><a href="#mbti" id="nav-mbti">MBTI</a></li>
+      <li><a href="#dream" id="nav-dream">꿈</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- 히어로 섹션 -->
+  <section id="home" class="hero">
+    <div class="hero-bg-image"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- 떠다니는 분자 -->
+    <div class="floating-molecule mol-1">⬡</div>
+    <div class="floating-molecule mol-2">◈</div>
+    <div class="floating-molecule mol-3">⬡</div>
+    <div class="floating-molecule mol-4">◈</div>
+    <div class="floating-molecule mol-5">⬡</div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        INFP · 학생 · 미래 화학자
+      </div>
+      <h1 class="hero-title">
+        <span class="title-greeting">안녕하세요,</span>
+        <span class="title-name">우 <em>준 서</em></span>
+        <span class="title-sub">입니다</span>
+      </h1>
+      <p class="hero-desc">
+        화학의 세계를 꿈꾸며, 오늘도 유튜브와 롤과 함께 성장 중인 청년입니다. 🧪
+      </p>
+      <div class="hero-cta">
+        <a href="#about" class="btn-primary" id="hero-btn-about">더 알아보기</a>
+        <a href="#dream" class="btn-secondary" id="hero-btn-dream">나의 꿈 보기</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-target="18">0</span>
+          <span class="stat-label">나이</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="3">0</span>
+          <span class="stat-label">취미</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="1">0</span>
+          <span class="stat-label">꿈</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-avatar-wrap">
+      <div class="avatar-ring ring-1"></div>
+      <div class="avatar-ring ring-2"></div>
+      <div class="avatar-ring ring-3"></div>
+      <div class="avatar-glow"></div>
+      <img src="assets/profile_avatar.png" alt="우준서 프로필" class="hero-avatar" id="hero-avatar" />
+    </div>
+
+    <div class="scroll-hint" id="scroll-hint">
+      <span>스크롤</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- 소개 섹션 -->
+  <section id="about" class="section about-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">나를 소개합니다</h2>
+        <p class="section-subtitle">화학을 사랑하고, 롤을 즐기며, 꿈을 키워가는 학생입니다.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card" id="about-card-name">
+          <div class="card-icon">👤</div>
+          <div class="card-content">
+            <h3>이름</h3>
+            <p>우준서 (Woo Junse)</p>
+          </div>
+        </div>
+        <div class="about-card" id="about-card-gender">
+          <div class="card-icon">♂️</div>
+          <div class="card-content">
+            <h3>성별</h3>
+            <p>남성</p>
+          </div>
+        </div>
+        <div class="about-card" id="about-card-status">
+          <div class="card-icon">📚</div>
+          <div class="card-content">
+            <h3>현재 상태</h3>
+            <p>학생</p>
+          </div>
+        </div>
+        <div class="about-card" id="about-card-mbti">
+          <div class="card-icon">🧠</div>
+          <div class="card-content">
+            <h3>MBTI</h3>
+            <p>INFP</p>
+          </div>
+        </div>
+        <div class="about-card about-card-wide" id="about-card-dream">
+          <div class="card-icon">🧪</div>
+          <div class="card-content">
+            <h3>꿈</h3>
+            <p>화학 분야와 관련된 직업을 갖는 것</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 화학 원소 카드 -->
+      <div class="element-showcase">
+        <div class="element-card" id="element-h">
+          <div class="el-number">1</div>
+          <div class="el-symbol">H</div>
+          <div class="el-name">수소</div>
+        </div>
+        <div class="element-card" id="element-c">
+          <div class="el-number">6</div>
+          <div class="el-symbol">C</div>
+          <div class="el-name">탄소</div>
+        </div>
+        <div class="element-card featured-el" id="element-wjs">
+          <div class="el-number">03</div>
+          <div class="el-symbol">WJS</div>
+          <div class="el-name">우준서</div>
+        </div>
+        <div class="element-card" id="element-n">
+          <div class="el-number">7</div>
+          <div class="el-symbol">N</div>
+          <div class="el-name">질소</div>
+        </div>
+        <div class="element-card" id="element-o">
+          <div class="el-number">8</div>
+          <div class="el-symbol">O</div>
+          <div class="el-name">산소</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 취미 섹션 -->
+  <section id="hobbies" class="section hobbies-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Hobbies</span>
+        <h2 class="section-title">나의 취미</h2>
+        <p class="section-subtitle">쉬는 시간엔 이것들이 나의 에너지입니다.</p>
+      </div>
+      <div class="hobbies-grid">
+        <!-- 유튜브 -->
+        <div class="hobby-card" id="hobby-youtube">
+          <div class="hobby-bg hobby-bg-youtube"></div>
+          <div class="hobby-icon-wrap">
+            <svg viewBox="0 0 48 48" class="hobby-svg" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="12" fill="#FF0000"/>
+              <polygon points="20,15 20,33 34,24" fill="white"/>
+            </svg>
+          </div>
+          <div class="hobby-info">
+            <h3>유튜브 보기</h3>
+            <p>다양한 콘텐츠를 통해 새로운 정보와 재미를 찾아요. 특히 과학·지식 채널을 즐겨 봅니다.</p>
+          </div>
+          <div class="hobby-tag">#Entertainment</div>
+        </div>
+
+        <!-- 롤 -->
+        <div class="hobby-card" id="hobby-lol">
+          <div class="hobby-bg hobby-bg-lol"></div>
+          <div class="hobby-icon-wrap">
+            <svg viewBox="0 0 48 48" class="hobby-svg" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="12" fill="#C89B3C"/>
+              <path d="M24 6 L38 38 H28 L24 28 L20 38 H10 Z" fill="#0BC4E3" stroke="#C89B3C" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="hobby-info">
+            <h3>리그 오브 레전드</h3>
+            <p>전략과 팀워크가 필요한 게임! 집중력과 순발력을 기르며 스트레스를 해소합니다.</p>
+          </div>
+          <div class="hobby-tag">#Gaming</div>
+        </div>
+
+        <!-- 수면 -->
+        <div class="hobby-card" id="hobby-sleep">
+          <div class="hobby-bg hobby-bg-sleep"></div>
+          <div class="hobby-icon-wrap">
+            <div class="sleep-icon">😴</div>
+          </div>
+          <div class="hobby-info">
+            <h3>집에서 잠자기</h3>
+            <p>충분한 휴식은 창의력의 원천! 꿈속에서도 새로운 아이디어를 만납니다.</p>
+          </div>
+          <div class="hobby-tag">#Relaxation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MBTI 섹션 -->
+  <section id="mbti" class="section mbti-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Personality</span>
+        <h2 class="section-title">MBTI: INFP</h2>
+        <p class="section-subtitle">중재자형 — 이상적이고 창의적인 몽상가</p>
+      </div>
+      <div class="mbti-container">
+        <div class="mbti-letters">
+          <div class="mbti-letter" id="mbti-i">
+            <span class="letter">I</span>
+            <span class="label">내향형<br/><small>Introversion</small></span>
+          </div>
+          <div class="mbti-letter" id="mbti-n">
+            <span class="letter">N</span>
+            <span class="label">직관형<br/><small>iNtuition</small></span>
+          </div>
+          <div class="mbti-letter" id="mbti-f">
+            <span class="letter">F</span>
+            <span class="label">감정형<br/><small>Feeling</small></span>
+          </div>
+          <div class="mbti-letter" id="mbti-p">
+            <span class="letter">P</span>
+            <span class="label">인식형<br/><small>Perceiving</small></span>
+          </div>
+        </div>
+        <div class="mbti-traits">
+          <div class="trait-item" id="trait-1">
+            <div class="trait-icon">🎨</div>
+            <div class="trait-text">
+              <h4>창의적인 상상력</h4>
+              <p>틀에 얽매이지 않는 자유로운 사고로 새로운 아이디어를 만들어냅니다.</p>
+            </div>
+          </div>
+          <div class="trait-item" id="trait-2">
+            <div class="trait-icon">💙</div>
+            <div class="trait-text">
+              <h4>깊은 공감 능력</h4>
+              <p>타인의 감정을 섬세하게 이해하고 진심으로 배려하는 따뜻한 마음을 가졌습니다.</p>
+            </div>
+          </div>
+          <div class="trait-item" id="trait-3">
+            <div class="trait-icon">🌙</div>
+            <div class="trait-text">
+              <h4>이상주의자</h4>
+              <p>더 나은 세상을 꿈꾸며, 자신의 가치관에 따라 행동하는 이상주의적 성향을 지닙니다.</p>
+            </div>
+          </div>
+          <div class="trait-item" id="trait-4">
+            <div class="trait-icon">✨</div>
+            <div class="trait-text">
+              <h4>열정적인 탐구자</h4>
+              <p>관심 있는 분야에 깊이 파고드는 집중력과 열정을 보여줍니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 꿈 섹션 -->
+  <section id="dream" class="section dream-section">
+    <div class="dream-bg"></div>
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">My Dream</span>
+        <h2 class="section-title">나의 꿈</h2>
+        <p class="section-subtitle">화학으로 세상을 바꾸다</p>
+      </div>
+      <div class="dream-content">
+        <div class="dream-visual">
+          <div class="molecule-display" id="molecule-display">
+            <div class="mol-center">
+              <span>⬡</span>
+            </div>
+            <div class="mol-orbit orbit-1">
+              <div class="mol-atom atom-h">H</div>
+            </div>
+            <div class="mol-orbit orbit-2">
+              <div class="mol-atom atom-c">C</div>
+            </div>
+            <div class="mol-orbit orbit-3">
+              <div class="mol-atom atom-o">O</div>
+            </div>
+          </div>
+        </div>
+        <div class="dream-text">
+          <h3>화학 분야 전문가</h3>
+          <p class="dream-quote">
+            "원소들의 언어로 세상을 이해하고, 새로운 물질로 더 나은 미래를 만들고 싶습니다."
+          </p>
+          <div class="career-options">
+            <div class="career-card" id="career-researcher">
+              <div class="career-icon">🔬</div>
+              <h4>화학 연구원</h4>
+              <p>새로운 물질과 반응을 연구하며 과학의 발전에 기여</p>
+            </div>
+            <div class="career-card" id="career-engineer">
+              <div class="career-icon">⚗️</div>
+              <h4>화학 엔지니어</h4>
+              <p>화학 공정을 설계하고 최적화하여 산업 발전에 기여</p>
+            </div>
+            <div class="career-card" id="career-pharma">
+              <div class="career-icon">💊</div>
+              <h4>제약 과학자</h4>
+              <p>새로운 의약품을 개발하여 인류의 건강에 기여</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>WJS<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-text">우준서 © 2026 · 화학을 꿈꾸는 학생</p>
+      <p class="footer-sub">Made with 🧪 &amp; ❤️</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
